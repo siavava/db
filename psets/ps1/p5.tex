@@ -7,32 +7,32 @@
     \textbf{T1:}
     
     \centering
-    \begin{tabular}{|c|c|c|}
-      \hline
+    \begin{tabular}{ c c c }
+      \midrule
       $a$ & $b$ & $c$ \\
-      \hline
+      \midrule
       5 & Q & 3 \\
-      \hline
+      \midrule
       10 & R & 7 \\
-      \hline
+      \midrule
       15 & Q & 11 \\
-      \hline
+      \bottomrule
     \end{tabular}
 
     \flushleft
     \textbf{T2:}
 
     \centering
-    \begin{tabular}{|c|c|c|}
-      \hline
+    \begin{tabular}{ c c c }
+      \midrule
       $x$ & $y$ & $z$ \\
-      \hline
+      \midrule
       25 & R & 13 \\
-      \hline
+      \midrule
       10 & R & 5 \\
-      \hline
+      \midrule
       10 & S & 11 \\
-      \hline
+      \bottomrule
     \end{tabular}
   \end{multicols}
 
@@ -44,14 +44,14 @@
     
     \begin{Answer}
       \centering
-      \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
+      \begin{tabular}{c c c c c c }
+        \midrule
         $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
-        \hline
+        \midrule
         10 & R & 7 & 10 & R & 5 \\
-        \hline
+        \midrule
         10 & R & 7 & 10 & S & 11 \\
-        \hline
+        \midrule
       \end{tabular}
     \end{Answer}
 
@@ -59,99 +59,99 @@
     
     \begin{Answer}
       \centering
-      \begin{tabular}{|c|}
-        \hline
+      \begin{tabular}{ c }
+        \midrule
         $z$ \\
-        \hline
+        \midrule
         $5$ \\
-        \hline
+        \midrule
       \end{tabular}
     \end{Answer}
     \item $T1 \cup T2$
     
     \begin{Answer}
       \centering
-      \begin{tabular}{|c|c|c|}
-        \hline
+      \begin{tabular}{ c c c }
+        \midrule
         $a$ & $b$ & $c$ \\
-        \hline
+        \midrule
         5 & Q & 3 \\
-        \hline
+        \midrule
         10 & R & 7 \\
-        \hline
+        \midrule
         15 & Q & 11 \\
-        \hline
+        \midrule
         25 & R & 13 \\
-        \hline
+        \midrule
         10 & R & 5 \\
-        \hline
+        \midrule
         10 & S & 11 \\
-        \hline
-      \end{tabular}
-    \end{Answer}
-    \item $T1 \times T2$
-    
-    \begin{Answer}
-      \centering
-      \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
-        \hline
-        5 & Q & 3 & 25 & R & 13 \\
-        \hline
-        5 & Q & 3 & 10 & R & 5 \\
-        \hline
-        5 & Q & 3 & 10 & S & 11 \\
-        \hline
-        10 & R & 7 & 25 & R & 13 \\
-        \hline
-        10 & R & 7 & 10 & R & 5 \\
-        \hline
-        10 & R & 7 & 10 & S & 11 \\
-        \hline
-        15 & Q & 11 & 25 & R & 13 \\
-        \hline
-        15 & Q & 11 & 10 & R & 5 \\
-        \hline
-        15 & Q & 11 & 10 & S & 11 \\
-        \hline
+        \midrule
       \end{tabular}
     \end{Answer}
 
     \newpage
-    \item $T1 \leftouterjoin_{T1.a < T2.x} T2$
+    \item $T1 \times T2$
     
+    \begin{Answer}
+      \centering
+      \begin{tabular}{ c c c c c c }
+        \midrule
+        $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
+        \midrule
+        5 & Q & 3 & 25 & R & 13 \\
+        \midrule
+        5 & Q & 3 & 10 & R & 5 \\
+        \midrule
+        5 & Q & 3 & 10 & S & 11 \\
+        \midrule
+        10 & R & 7 & 25 & R & 13 \\
+        \midrule
+        10 & R & 7 & 10 & R & 5 \\
+        \midrule
+        10 & R & 7 & 10 & S & 11 \\
+        \midrule
+        15 & Q & 11 & 25 & R & 13 \\
+        \midrule
+        15 & Q & 11 & 10 & R & 5 \\
+        \midrule
+        15 & Q & 11 & 10 & S & 11 \\
+        \midrule
+      \end{tabular}
+    \end{Answer}
+
+    \item $T1 \leftouterjoin_{T1.a < T2.x} T2$    
     \begin{Answer}
       
       \centering
-      \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
+      \begin{tabular}{ c c c c c c }
+        \midrule
         $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
-        \hline
+        \midrule
         5 & Q & 3 & 25 & R & 13 \\
-        \hline
+        \midrule
         5 & Q & 3 & 10 & R & 5 \\
-        \hline
+        \midrule
         5 & Q & 3 & 10 & S & 11 \\
-        \hline
+        \midrule
         10 & R & 7 & 25 & R & 13 \\
-        \hline
+        \midrule
         15 & Q & 11 & 25 & R & 13 \\
-        \hline
+        \midrule
       \end{tabular}
     \end{Answer}
     \item $\Pi_{T1.a, T1.c, T2.x}(\sigma_{T1.a = T2.x \land (T1.a > 7\ \lor T1.c < 7)}\ (T1 \times T2))$
   
     \begin{Answer}
       \centering
-      \begin{tabular}{|c|c|c|}
-        \hline
+      \begin{tabular}{ c c c }
+        \midrule
         $a$ & $c$ & $x$ \\
-        \hline
+        \midrule
         10 & 7 & 10 \\
-        \hline
+        \midrule
         10 & 7 & 10 \\
-        \hline
+        \midrule
       \end{tabular}
     \end{Answer}
   \end{enumalph}
