@@ -1,0 +1,66 @@
+\begin{problem}(25 points)
+
+  \noindent
+  (From Tannenbaum) Given the following relational model:
+
+  \centering
+  \begin{Verbatim}
+    employee (personName, street, city)
+    works (personName, companyName, salary)
+    company (companyName, city)
+    manages (personName, managerName)
+  \end{Verbatim}
+
+  \flushleft
+  \noindent
+  Give relational algebra expressions for the following queries:
+
+  \begin{enumalph}
+    \item Find the names of all employees who work for ``First Bank Corporation''.
+    \begin{Answer}
+      \begin{align*}
+        \Pi_{personName}(\sigma_{companyName=''First Bank Corporation''}(works))
+      \end{align*}
+    \end{Answer}
+    
+    \item Find the names and cities of residence of all employees
+    who work for ``First Bank Corporation''.
+    \begin{Answer}
+      \begin{align*}
+        \Pi_{personName,\;city}(employee \Join (\sigma_{companyName = ''First Bank Corporation''}(works)))
+      \end{align*}
+    \end{Answer}
+    \item Find the names, street addresses, and cities of residence
+    of all employees who work for ``First Bank Corporation''
+    and earn more than $\$ 10,000$.
+
+    \begin{Answer}
+      \begin{align*}
+        &\Pi_{personName,\ street,\ city}\ (\\
+          &\qquad \sigma_{companyName = ''First Bank Corporation''\ \wedge\ salary\ >\ 10000}\ (employee\ \Join\ works)\\
+        &)
+      \end{align*}
+    \end{Answer}
+  
+    \item Find the names of all employees in this database who
+    live in the same city as the company for which they work.
+
+    \begin{Answer}
+      \begin{align*}
+        \Pi_{personName}\ (\sigma_{MM}(employee\ \Join\ works)\ \Join_{MM.city = company.city}\ company)
+      \end{align*}
+      
+    \end{Answer}
+    
+    \item Assume the companies may be located in several cities.
+    Find all companies located in every city in which 
+    ``Small Bank Corporation'' is located.
+    
+    \begin{Answer}
+      \begin{align*}
+        \Pi_{companyName}\ (company \div \Pi_{city}\ (\sigma_{companyName\ = \ ''Small Bank Corporation''}\ (company)))
+      \end{align*}
+    \end{Answer}
+    
+  \end{enumalph}
+\end{problem}

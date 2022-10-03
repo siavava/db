@@ -1,0 +1,161 @@
+\begin{problem} (25 points)
+
+  \noindent
+  Consider the two tables $T1$ and $T2$:
+
+  \begin{multicols}{2}
+    \textbf{T1:}
+    
+    \centering
+    \begin{tabular}{|c|c|c|}
+      \hline
+      $a$ & $b$ & $c$ \\
+      \hline
+      5 & Q & 3 \\
+      \hline
+      10 & R & 7 \\
+      \hline
+      15 & Q & 11 \\
+      \hline
+    \end{tabular}
+
+    \flushleft
+    \textbf{T2:}
+
+    \centering
+    \begin{tabular}{|c|c|c|}
+      \hline
+      $x$ & $y$ & $z$ \\
+      \hline
+      25 & R & 13 \\
+      \hline
+      10 & R & 5 \\
+      \hline
+      10 & S & 11 \\
+      \hline
+    \end{tabular}
+  \end{multicols}
+
+  \noindent
+  Show the results of the following relational algebra expressions:
+
+  \begin{enumalph}
+    \item $T1 \Join_{T1.a = T2.x} T2$
+    
+    \begin{Answer}
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
+        \hline
+        10 & R & 7 & 10 & R & 5 \\
+        \hline
+        10 & R & 7 & 10 & S & 11 \\
+        \hline
+      \end{tabular}
+    \end{Answer}
+
+    \item $\Pi_{z}(T2) - \Pi_{T2.z}(\sigma_{T2.z > T2B.z}(T2 \times \sigma_{T2B}(T2)))$
+    
+    \begin{Answer}
+      \centering
+      \begin{tabular}{|c|}
+        \hline
+        $z$ \\
+        \hline
+        $5$ \\
+        \hline
+      \end{tabular}
+    \end{Answer}
+    \item $T1 \cup T2$
+    
+    \begin{Answer}
+      \centering
+      \begin{tabular}{|c|c|c|}
+        \hline
+        $a$ & $b$ & $c$ \\
+        \hline
+        5 & Q & 3 \\
+        \hline
+        10 & R & 7 \\
+        \hline
+        15 & Q & 11 \\
+        \hline
+        25 & R & 13 \\
+        \hline
+        10 & R & 5 \\
+        \hline
+        10 & S & 11 \\
+        \hline
+      \end{tabular}
+    \end{Answer}
+    \item $T1 \times T2$
+    
+    \begin{Answer}
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
+        \hline
+        5 & Q & 3 & 25 & R & 13 \\
+        \hline
+        5 & Q & 3 & 10 & R & 5 \\
+        \hline
+        5 & Q & 3 & 10 & S & 11 \\
+        \hline
+        10 & R & 7 & 25 & R & 13 \\
+        \hline
+        10 & R & 7 & 10 & R & 5 \\
+        \hline
+        10 & R & 7 & 10 & S & 11 \\
+        \hline
+        15 & Q & 11 & 25 & R & 13 \\
+        \hline
+        15 & Q & 11 & 10 & R & 5 \\
+        \hline
+        15 & Q & 11 & 10 & S & 11 \\
+        \hline
+      \end{tabular}
+    \end{Answer}
+
+    \newpage
+    \item $T1 \leftouterjoin_{T1.a < T2.x} T2$
+    
+    \begin{Answer}
+      
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $a$ & $b$ & $c$ & $x$ & $y$ & $z$ \\
+        \hline
+        5 & Q & 3 & 25 & R & 13 \\
+        \hline
+        5 & Q & 3 & 10 & R & 5 \\
+        \hline
+        5 & Q & 3 & 10 & S & 11 \\
+        \hline
+        10 & R & 7 & 25 & R & 13 \\
+        \hline
+        15 & Q & 11 & 25 & R & 13 \\
+        \hline
+      \end{tabular}
+    \end{Answer}
+    \item $\Pi_{T1.a, T1.c, T2.x}(\sigma_{T1.a = T2.x \land (T1.a > 7\ \lor T1.c < 7)}\ (T1 \times T2))$
+  
+    \begin{Answer}
+      \centering
+      \begin{tabular}{|c|c|c|}
+        \hline
+        $a$ & $c$ & $x$ \\
+        \hline
+        10 & 7 & 10 \\
+        \hline
+        10 & 7 & 10 \\
+        \hline
+      \end{tabular}
+    \end{Answer}
+  \end{enumalph}
+  
+\end{problem}
+
+
