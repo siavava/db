@@ -1,0 +1,3 @@
+[submodule "psets/ps2"]
+	path = psets/ps2
+	url = git@github.com:siavava/61.2
